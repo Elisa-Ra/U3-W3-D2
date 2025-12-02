@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 function MyNavbar() {
   return (
     <Navbar expand="md" bg="dark" data-bs-theme="dark">
-      <Container>
+      <Container fluid>
         <Navbar.Brand href="#home">EpiGiornale</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">

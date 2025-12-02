@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import { Container, Row, Col, Spinner, Alert, Card } from 'react-bootstrap'
 import { type Article } from '../types'
 
+
 const apiURL = "https://api.spaceflightnewsapi.net/v4/articles"
 
 const ArticleDetail = () => {
@@ -40,18 +41,15 @@ const ArticleDetail = () => {
               <Card.Body>
                 <Card.Title>{article.title}</Card.Title>
                 <Card.Text>
-                  Pubblicato il{' '}
-                  {new Date(article.published_at).toLocaleDateString('it-IT', {
-                    day: '2-digit',
-                    month: 'long',
-                    year: 'numeric',
-                  })}
+                  <strong>Data di pubblicazione:</strong>{' '}
+                   {article.published_at}
                 </Card.Text>
-                <Card.Text><strong>News Site:</strong> {article.news_site}</Card.Text>
-                <Card.Text><strong>Summary:</strong> {article.summary}</Card.Text>
+                <Card.Text><strong>Sito:</strong> {article.news_site}</Card.Text>
+                <Card.Text><strong>Riassunto:</strong> {article.summary}</Card.Text>
                 <Card.Text>
-                  <a href={article.url} target="_blank" rel="noopener noreferrer">
-                    Leggi l’articolo completo
+                   
+                  <a href={article.url} target="_blank">
+                    Vai all’articolo completo
                   </a>
                 </Card.Text>
               </Card.Body>

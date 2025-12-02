@@ -14,13 +14,9 @@ const SingleArticle = ({ article }: Props) => {
         <Card.Title>{article.title}</Card.Title>
         <Card.Text>
           Pubblicato il{" "}
-          {new Date(article.published_at).toLocaleDateString("it-IT", {
-            day: "2-digit",
-            month: "long",
-            year: "numeric",
-          })}
+         {article.published_at}
         </Card.Text>
-        <Link to={`/articles/${article.id}`} className="btn btn-primary">
+        <Link to={`/articles/${article.id}`} className="btn btn-info">
           Leggi l'articolo
         </Link>
       </Card.Body>
