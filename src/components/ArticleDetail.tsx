@@ -1,13 +1,13 @@
-import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
-import { Container, Row, Col, Spinner, Alert, Card } from 'react-bootstrap'
-import { type Article } from '../types'
-
+import { useEffect, useState } from "react"
+import { useParams } from "react-router-dom"
+import { Container, Row, Col, Spinner, Alert, Card } from "react-bootstrap"
+import { type Article } from "../types"
 
 const apiURL = "https://api.spaceflightnewsapi.net/v4/articles"
 
 const ArticleDetail = () => {
-  const { id } = useParams<{ id: string }>()
+  const params = useParams<{ id: string }>()
+  const id = params.id
   const [article, setArticle] = useState<Article | null>(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
@@ -16,7 +16,7 @@ const ArticleDetail = () => {
     const fetchArticle = async () => {
       try {
         const res = await fetch(`${apiURL}/${id}`)
-        if (!res.ok) throw new Error('Errore nel recupero articolo')
+        if (!res.ok) throw new Error("Errore nel recupero articolo")
         const data: Article = await res.json()
         setArticle(data)
       } catch (err) {
@@ -44,10 +44,13 @@ const ArticleDetail = () => {
                   <strong>Data di pubblicazione:</strong>{' '}
                    {article.published_at}
                 </Card.Text> */}
-                <Card.Text><strong>Sito:</strong> {article.news_site}</Card.Text>
-                <Card.Text><strong>Riassunto:</strong> {article.summary}</Card.Text>
                 <Card.Text>
-                   
+                  <strong>Sito:</strong> {article.news_site}
+                </Card.Text>
+                <Card.Text>
+                  <strong>Riassunto:</strong> {article.summary}
+                </Card.Text>
+                <Card.Text>
                   <a href={article.url} target="_blank">
                     Vai all’articolo completo
                   </a>
