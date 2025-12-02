@@ -41,7 +41,7 @@ const FetchComponent = function () {
       </Row>
       <Row className="justify-content-center">
         {articles.map((article) => (
-          <Col xs={12} md={6} key={article.id}>
+          <Col xs={12} md={4} key={article.id}>
             <SingleArticle article={article} />
           </Col>
         ))}

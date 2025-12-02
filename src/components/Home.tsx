@@ -1,1 +1,0 @@
-// Pagina iniziale con le colonne 
