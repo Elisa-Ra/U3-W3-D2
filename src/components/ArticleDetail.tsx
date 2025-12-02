@@ -40,10 +40,10 @@ const ArticleDetail = () => {
               <Card.Img variant="top" src={article.image_url} />
               <Card.Body>
                 <Card.Title>{article.title}</Card.Title>
-                <Card.Text>
+                {/* <Card.Text>
                   <strong>Data di pubblicazione:</strong>{' '}
                    {article.published_at}
-                </Card.Text>
+                </Card.Text> */}
                 <Card.Text><strong>Sito:</strong> {article.news_site}</Card.Text>
                 <Card.Text><strong>Riassunto:</strong> {article.summary}</Card.Text>
                 <Card.Text>

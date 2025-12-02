@@ -10,7 +10,7 @@ const FetchComponent = function () {
  
 
   const getArticles = () => {
-    // recupero i libri dall'API
+    // recupero gli articoli dall'API
     fetch(apiURL)
       .then((response) => {
         if (response.ok) {
@@ -21,7 +21,7 @@ const FetchComponent = function () {
       })
       .then((allArticles) => {
         console.log(allArticles)
-        setArticles(allArticles.results) // salvo i libri ottenuti nello state
+        setArticles(allArticles.results) // salvo gli articoli
       })
       .catch((err) => {
         console.log('ERRORE', err)
